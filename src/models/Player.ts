@@ -37,5 +37,18 @@ public takeDamage(amount: number): string{
     }
     
     return `${this.name} levou ${amount} de dano e agora tem ${this.health} de saúde.`;
+}
+
+public takeHealth(amount: number): string {
+    this.health += amount;
+    if (this.health > 100) {
+        this.health = 100;
     }
+    return `${this.name} recuperou ${amount} de vida! Saúde atual: ${this.health}.`;
+    }
+
+public upLevel(amount: number): string {
+    this.level += amount;
+    return `${this.name} subiu para o nível ${this.level}`;
+}
 }
